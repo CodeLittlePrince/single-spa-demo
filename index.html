@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  hello
+  <p>
+    <a href="/">home</a>
+  </p>
+  <p>
+    <a href="/app1">app1</a>
+  </p>
+  <p>
+    <a href="/app2">app2</a>
+  </p>
+
+  <div id="single-spa-application:app1"></div>
+  <div id="single-spa-application:app2"></div>
+</body>
+
+<script>
+var as = document.getElementsByTagName('a')
+for (var i = 0, len = as.length; i < len; i++) {
+  as[i].addEventListener('click', e => {
+    e.preventDefault();
+    
+    history.pushState({}, 'hi', e.target.href)
+  })
+}
+
+</script>
+
+<script src="./index.js" type="module"></script>
+</html>
