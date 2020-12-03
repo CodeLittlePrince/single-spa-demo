@@ -5,7 +5,7 @@ registerApplication(
   'app2',
   () => import('/src/app2/main.js'),
   (location) => location.pathname.startsWith('/app2'),
-  { some: 'value for app1' }
+  { some: 'value for app2' }
 );
 
 // Config with more expressive API
@@ -14,7 +14,7 @@ registerApplication({
   app: () => import('/src/app1/main.js'),
   activeWhen: '/app1',
   customProps: {
-    some: 'value for app2',
+    some: 'value for app1',
   }
 });
 
